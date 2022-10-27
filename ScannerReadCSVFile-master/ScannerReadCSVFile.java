@@ -49,15 +49,22 @@ public class ScannerReadCSVFile
             
             Scanner scan = new Scanner(line);
             scan.useDelimiter(",");
-            int i = 0;
-            String sum = scan.nextLine();
-            
+            int a = 0;
+            int sum = 0;
             while (scan.hasNext()) {
-                i = 0;
-                while (i <= 10) {
-                    int avg = scan.hasNext();                   
+                a = 0;
+                while (a <= 10) {
+                    int score = scan.nextInt();
+                    if (score > 100) {
+                        String str = 
+                        System.out.println(str);
+                    }
+                    else {
+                        sum += score;
+                    }
+                    a++;
                 }
-                i++;
+                
             }
             
         }
