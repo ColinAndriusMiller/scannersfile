@@ -46,27 +46,29 @@ public class ScannerReadCSVFile
             // Pay attention to the spacing on your output
             //
             // Write your code in the space below!
-            
+            int lines = 1;
+            if (lines == 1) {
             Scanner scan = new Scanner(line);
             scan.useDelimiter(",");
-            int a = 0;
-            int sum = 0;
+            int testscore = 0;
+            String classsec = "";
             while (scan.hasNext()) {
-                a = 0;
-                while (a <= 10) {
+                int a = 0;
+                while (a < 10) {
                     int score = scan.nextInt();
                     if (score > 100) {
-                        String str = 
-                        System.out.println(str);
+                        classsec += score;
                     }
                     else {
-                        sum += score;
+                        testscore += score;
                     }
+                    
                     a++;
                 }
-                
+                System.out.print(classsec + ";" + testscore/10);
             }
-            
+            lines++;
+        }
         }
     }
 
