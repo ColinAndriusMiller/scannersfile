@@ -18,54 +18,28 @@ public class ScannerReadCSVFile
         // Set the delimiter as a new-line character so we can read the
         // data one line at a time
         scanner.useDelimiter("\n");
-
+        int Lines = 1;
         // Continue while there's still data in the file to be read
         while (scanner.hasNext()) {
             // Read the next line of the file
             String line = scanner.nextLine();
-
-            // line now contains a line of comma-separated numbers
-            // representing 10 test scores for each class.
-            //
-            // Your job is to parse the numbers into individual test scores using
-            // another Scanner variable using a comma as the delimiter.  
-            // 
-            // Read the ten test scores and average them together.  The first
-            // number is the class number and the next 10 numbers are the 
-            // test scores.  
-            //
-            // You need to compute the average and print for each class the class
-            // number, then the average score.  The first few lines should look
-            // like this:
-            //
-            // Class: Avg score
-            // 2125:  55
-            // 1628:  47
-            //
-            // Pay attention to the spacing on your output
-            //
-            // Write your code in the space below!
-            int Lines = 1;
+            
             Scanner scan = new Scanner(line);
             scan.useDelimiter(",");
             int testscore = 0;
             int sum = 0;
-            String classsec = "";
+            int classsec = 0;
             if (Lines == 1) {
                 System.out.println("class Section" + ";" + "avg");
-
             } else {
                 while (scan.hasNext()) {
                     int a = scan.nextInt();
-
-                    int score = scan.nextInt();
-                    if (score > 999) {
-                        classsec += score;
+                    if (a > 999) {
+                        classsec += a;
                     }
                     else {
-                        testscore += score;
+                        testscore += a;
                     }
-
                 }
                 System.out.println(classsec + ";" + (testscore/10));
             }
